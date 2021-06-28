@@ -18,10 +18,10 @@ class _HomePageState extends State<HomePage> {
 
     if (_search == null) {
       response = await http.get(
-          "https://api.giphy.com/v1/gifs/trending?api_key=J2US73tCiBvvohSivWuYCuisdVeftgir&limit=20&rating=g");
+          "https://api.giphy.com/v1/gifs/trending?api_key=sGzNTZYfu05hP8KL93rppBO7a814riLZ&limit=25&rating=g");
     } else {
       response = await http.get(
-          "https://api.giphy.com/v1/gifs/search?api_key=J2US73tCiBvvohSivWuYCuisdVeftgir&q=$_search&limit=20&offset=$_offset&rating=g&lang=en");
+          "https://api.giphy.com/v1/gifs/search?api_key=sGzNTZYfu05hP8KL93rppBO7a814riLZ&q=$_search&limit=25&offset=$_offset&rating=g&lang=en");
     }
     return json.decode(response.body);
   }
@@ -36,6 +36,13 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Image.network(
+            'https://developers.giphy.com/branch/master/static/header-logo-8974b8ae658f704a5b48a2d039b8ad93.gif'),
+        centerTitle: true,
+      ),
+    );
   }
 }
